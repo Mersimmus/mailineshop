@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mailines Handmade Things</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function showPopup(name, img1, img2) {
+      document.getElementById('popup-title').innerText = name;
+      document.getElementById('popup-img1').src = img1;
+      document.getElementById('popup-img2').src = img2;
+      document.getElementById('popup-product').value = name;
+      document.getElementById('popup').classList.add("show");
+    }
+    function closePopup() {
+      document.getElementById('popup').classList.remove("show");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Logo" class="logo"/>
+      <h1>Mailines Handmade Things</h1>
+      <p>Slimes, Ketten & kreative Handarbeit – mit Liebe gemacht!</p>
+    </header>
+
+    <section class="intro">
+      <img src="Mailine.jpg" alt="Mailine" />
+      <div>
+        <h2>Hallo, ich bin Mailine!</h2>
+        <p>Ich bin 10 Jahre alt, gehe in die 4. Klasse und liebe es zu basteln. Ich mache bunte Slimes, Schmuck und Bastelsets.</p>
+        <p>Ich schreibe Geschichten, gehe schwimmen, liebe Pferde & Hunde. Ich spreche 5 Sprachen – bald 6!</p>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>Unsere Produkte</h2>
+      <div class="product-grid">
+
+        <div class="product" onclick="showPopup('Brownie', 'Brownie..jpg', 'Brownie_open.jpg')">
+          <img src="Brownie..jpg" alt="Brownie" />
+          <h3>Brownie</h3>
+        </div>
+
+        <div class="product" onclick="showPopup('Cozy Popcorn movie', 'Cozy_Popcorn_movey.jpg', 'Cozy_Popcorn_movey..jpg')">
+          <img src="Cozy_Popcorn_movey.jpg" alt="Cozy Popcorn movie" />
+          <h3>Cozy Popcorn movie</h3>
+        </div>
+
+        <div class="product" onclick="showPopup('Pink Unicorn', 'Pink_Unicorn..jpg', 'Pink_Unicorn_open.jpg')">
+          <img src="Pink_Unicorn..jpg" alt="Pink Unicorn" />
+          <h3>Pink Unicorn</h3>
+        </div>
+
+        <div class="product" onclick="showPopup('Sea Gras', 'Sea_Gras..jpg', 'Sea_Gras_open.jpg')">
+          <img src="Sea_Gras..jpg" alt="Sea Gras" />
+          <h3>Sea Gras</h3>
+        </div>
+
+        <div class="product" onclick="showPopup('Shell Ocean', 'Shell_Ocean..jpg', 'Shell_Ocean_open.jpg')">
+          <img src="Shell_Ocean..jpg" alt="Shell Ocean" />
+          <h3>Shell Ocean</h3>
+        </div>
+
+      </div>
+    </section>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+        <h2 id="popup-title"></h2>
+        <img id="popup-img1" src="" alt="" />
+        <img id="popup-img2" src="" alt="" />
+        <p><strong>Handgemachter Duftslime:</strong><br>
+        Weich, duftend, entspannend – jeder Slime ist von Mailine selbst gemacht und macht einfach Spaß!</p>
+        <p><strong>Preise:</strong><br>
+        1 Stück: 11,90 €<br>
+        3er-Set: je 8,90 €<br>
+        5er-Set: je 6,90 €</p>
+        <form action="https://formsubmit.io/send/mersimmustafi@gmail.com" method="POST">
+          <input type="hidden" name="_redirect" value="https://example.com/danke.html" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input id="popup-product" type="hidden" name="Produkt" />
+          <input type="text" name="Name" placeholder="Dein Name" required />
+          <input type="email" name="Email" placeholder="Deine E-Mail" required />
+          <textarea name="Nachricht" placeholder="Nachricht oder Anzahl" required></textarea>
+          <button type="submit">Jetzt bestellen</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>Impressum | Datenschutz | AGB</p>
+    </footer>
+  </div>
+</body>
+</html>
